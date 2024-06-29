@@ -1,0 +1,82 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e99fff;
+}
+
+header {
+    background: #120516;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #854ccb;
+}
+
+nav ul li {
+    margin: 2px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background: #f01ab4;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff0095;
+}
+ul {
+    list-style: disc inside;
+}
+.joguinho {
+     justify-content: space-between;
+     display: flex;
+      width: 50%;
+   
+  
+}
+.list {
+    
+    padding: 0;
+    list-style: none;
+}
+.list li {
+    margin: center;
+    padding: 30px;
+    background: #e559fa;
+    color: white;
+    cursor: pointer;
+    
+}
+.list li.selected {
+    background: #ff0095;
+}
+footer {
+    text-align: center;
+    padding:30px;
+    background: #16061c;
+    color: white;
+}

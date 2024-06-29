@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agater.agro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AgroMaisMais</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#variacoes">Variações da soja</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h2>Introdução</h2>
+        <p>A soja (Glycine max) é uma planta amplamente cultivada devido ao seu valor nutricional
+             e à versatilidade de seus usos industriais.
+             Existem várias cultivares de soja, cada uma desenvolvida para atender diferentes 
+             necessidades agrícolas e industriais.
+            </p>
+    </section>
+    <section id="variacoes">
+        <h2>Tipos de Soja</h2>
+        <article>
+            <h3>Soja Convencional:</h3>
+            <p>Descrição: Variedades de soja que não foram geneticamente modificadas.
+                  Uso: Consumo humano e animal, produtos alimentícios, e produtos industriais.</p>
+        </article>
+        <article>
+            <h3>Soja Geneticamente Modificada (GM):</h3>
+            <p>Descrição: Variedades que foram modificadas geneticamente para possuir características como resistência 
+                  a herbicidas e pragas.
+                  Exemplos:
+                  Roundup Ready: Resistente ao herbicida glifosato.
+                  LibertyLink: Resistente ao herbicida glufosinato.</p>
+        </article>
+        <article>
+            <h3>Soja Alimentar:</h3>
+            <p>Descrição: Variedades de soja destinadas ao consumo humano direto.
+                  Exemplos:
+                  Edamame: Soja colhida verde e consumida como legume.
+                  Tofu: Feito a partir de soja processada em leite de soja e coagulada.</p>
+        </article>
+    </section>
+    <section id="beneficios">
+        <h2>Benefícios da Soja</h2>
+        <ul>
+            <li>Rica em Proteínas</li>
+            <li>Baixa em Gorduras Saturadas</li>
+            <li>Fonte de Fibras</li>
+            <li>Rica em Vitaminas e Minerais</li>
+           
+        </ul>
+    </section>
+      <div class="joguinho">
+          <ul class="list" id="list1">
+              <li data-match="1">Soja</li>
+              <li data-match="2">LibertyLink</li>
+              <li data-match="3">Edamame</li>
+          </ul>
+          <ul class="list" id="list2">
+              <li data-match="1">Planta amplamente cultivada</li>
+              <li data-match="2">Soja Geneticamente Modificada </li>
+              <li data-match="3">Soja Alimentar</li>
+          </ul>
+      </div>
+      <script>
+          const list1Items = document.querySelectorAll('#list1 li');
+          const list2Items = document.querySelectorAll('#list2 li');
+          let selected1 = null;
+          let selected2 = null;
+  
+          list1Items.forEach(item => {
+              item.addEventListener('click', () => {
+                  if (selected1) {
+                      selected1.classList.remove('selected');
+                  }
+                  selected1 = item;
+                  item.classList.add('selected');
+                  checkMatch();
+              });
+          });
+  
+          list2Items.forEach(item => {
+              item.addEventListener('click', () => {
+                  if (selected2) {
+                      selected2.classList.remove('selected');
+                  }
+                  selected2 = item;
+                  item.classList.add('selected');
+                  checkMatch();
+              });
+          });
+  
+          function checkMatch() {
+              if (selected1 && selected2) {
+                  if (selected1.dataset.match === selected2.dataset.match) {
+                      alert('Parabéns!A resposta está correta.');
+                  } else {
+                      alert('Que pena!! Está incorreto,jogue novamente.');
+                  }
+                  selected1.classList.remove('selected');
+                  selected2.classList.remove('selected');
+                  selected1 = null;
+                  selected2 = null;
+              }
+          }
+      </script>
+    <footer>
+        <h2 id="Contato">projeto por</h2>
+        <p>Geluca</p>
+    </footer>
+</body>
+</html>
